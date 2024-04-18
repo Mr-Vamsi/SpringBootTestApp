@@ -8,6 +8,6 @@
 <title>Login</title>
 </head>
 <body>
-	<h2>Welcome to the website</h2>
+	<h2>Hi ${userName} welcome to the website</h2>
 </body>
 </html>

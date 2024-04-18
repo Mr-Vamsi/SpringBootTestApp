@@ -43,7 +43,7 @@ public class usersController {
             modelMap.addAttribute("userName", user.getName());
             return "home";
         } else {
-            modelMap.addAttribute("error", "Invalid Email or Password");
+            modelMap.addAttribute("error", "please check the Email / Password");
             return "LoginPage";
         }
     }

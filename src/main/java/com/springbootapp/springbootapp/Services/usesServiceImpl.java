@@ -20,12 +20,10 @@ public class usesServiceImpl implements usersService {
     @Override
     public users validateLogin(String email, String password) {
         users userData = repository.findByEmail(email);
-
-        System.out.println(userData.getEmail());
-        System.out.println(userData.getName());
-        System.out.println(userData.getPhone());
-
-        if (userData.getEmail().equals(email) && userData.getPassword().equals(password)) {
+        if (userData != null && userData.getEmail().equals(email) && userData.getPassword().equals(password)) {
+            System.out.println(userData.getEmail());
+            System.out.println(userData.getName());
+            System.out.println(userData.getPhone());
             return userData;
         } else {
             return null;
