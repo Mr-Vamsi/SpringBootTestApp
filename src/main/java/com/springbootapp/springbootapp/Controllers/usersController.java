@@ -27,9 +27,10 @@ public class usersController {
     }
 
     @RequestMapping("/saveReg")
-    public String registerUser(@ModelAttribute("Users") users Users) {
+    public String registerUser(@ModelAttribute("Users") users Users, ModelMap modelMap) {
         if (!Users.getPassword().equals(null) || !Users.getEmail().equals(null)) {
             service.saveuser(Users);
+            modelMap.addAttribute("error", "Registered Succesfully");
             return "LoginPage";
         } else {
             return "RegPage";
@@ -46,6 +47,16 @@ public class usersController {
             modelMap.addAttribute("error", "please check the Email / Password");
             return "LoginPage";
         }
+    }
+
+    @RequestMapping("/logout")
+    public String logout() {
+        return "LoginPage";
+    }
+
+    @RequestMapping("/home")
+    public String homePage() {
+        return "index";
     }
 
 }
