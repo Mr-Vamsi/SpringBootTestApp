@@ -1,13 +1,17 @@
-package com.springbootapp.Controllers;
+package com.springbootapp.springbootapp.Controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.springbootapp.Entities.users;
-import com.springbootapp.Services.usersService;
+
+import com.springbootapp.springbootapp.Services.*;
+import com.springbootapp.springbootapp.Entities.*;
 
 @Controller
 public class usersController {
+
+    @Autowired
     private usersService service;
 
     @RequestMapping("/Register")
