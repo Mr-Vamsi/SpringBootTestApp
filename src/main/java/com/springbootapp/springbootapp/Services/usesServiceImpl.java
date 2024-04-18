@@ -2,6 +2,7 @@ package com.springbootapp.springbootapp.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.springbootapp.springbootapp.Entities.*;
 import com.springbootapp.springbootapp.Repositories.usersRepository;
 
@@ -14,5 +15,20 @@ public class usesServiceImpl implements usersService {
     @Override
     public void saveuser(users users) {
         repository.save(users);
+    }
+
+    @Override
+    public users validateLogin(String email, String password) {
+        users userData = repository.findByEmail(email);
+
+        System.out.println(userData.getEmail());
+        System.out.println(userData.getName());
+        System.out.println(userData.getPhone());
+
+        if (userData.getEmail().equals(email) && userData.getPassword().equals(password)) {
+            return userData;
+        } else {
+            return null;
+        }
     }
 }

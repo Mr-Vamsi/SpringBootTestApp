@@ -9,6 +9,13 @@
 </head>
 <body>
 	<h2>Login Page</h2>
-    <form>
+    <%-- ${error} --%>
+    <form action="userLogin", method="post">
+        <pre>
+            Email            <input type="text" name="email">
+            Password         <input type="password" name="password">
+            <button type="Submit">Login</button>
+        </pre>
+</form>
 </body>
 </html>

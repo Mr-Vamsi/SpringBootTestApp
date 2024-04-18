@@ -12,7 +12,7 @@
         <pre>
             Name             <input type="text" name="name">
             Email            <input type="text" name="email">
-            Phone            <input type="number" name="number">
+            Phone            <input type="number" name="phone">
             Password         <input type="password" name="password">
             Confirm Password <input type="text" name="confirmpassword">
             <button type="Submit">Register</button>
